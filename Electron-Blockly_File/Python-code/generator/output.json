@@ -1,0 +1,787 @@
+[
+    {
+        "scope": "CNN",
+        "attributes": [],
+        "class_declaration": [
+            {
+                "function": "Declaration",
+                "parameters": "@nn.compact",
+                "assigned": 12
+            }
+        ],
+        "functions": [
+            {
+                "functionName": "__call__",
+                "parameters": "(self, x)",
+                "functionCalls": [
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=32, kernel_size=(3, 3))(x)",
+                        "assigned": "x",
+                        "index": 17
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=32, kernel_size=(3, 3))",
+                        "assigned": "x",
+                        "index": 17
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(x)",
+                        "assigned": "x",
+                        "index": 18
+                    },
+                    {
+                        "function": "avg_pool",
+                        "parameters": "(x, window_shape=(2, 2), strides=(2, 2))",
+                        "assigned": "x",
+                        "index": 19
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=64, kernel_size=(3, 3))(x)",
+                        "assigned": "x",
+                        "index": 20
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=64, kernel_size=(3, 3))",
+                        "assigned": "x",
+                        "index": 20
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(x)",
+                        "assigned": "x",
+                        "index": 21
+                    },
+                    {
+                        "function": "avg_pool",
+                        "parameters": "(x, window_shape=(2, 2), strides=(2, 2))",
+                        "assigned": "x",
+                        "index": 22
+                    },
+                    {
+                        "function": "reshape",
+                        "parameters": "((x.shape[0], -1))",
+                        "assigned": "x",
+                        "index": 23
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=256)(x)",
+                        "assigned": "x",
+                        "index": 24
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=256)",
+                        "assigned": "x",
+                        "index": 24
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(x)",
+                        "assigned": "x",
+                        "index": 25
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=10)(x)",
+                        "assigned": "x",
+                        "index": 26
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=10)",
+                        "assigned": "x",
+                        "index": 26
+                    }
+                ],
+                "scope": "CNN",
+                "row": "16",
+                "returns": "x",
+                "translate": true,
+                "start_byte": 342,
+                "end_byte": 772
+            }
+        ],
+        "translate": true,
+        "row_number": 12,
+        "parameters": "",
+        "base_classes": "(nn.Module)",
+        "start_byte": 275,
+        "end_byte": 772
+    },
+    {
+        "scope": "Encoder",
+        "attributes": [
+            {
+                "function": "member",
+                "parameters": "int",
+                "assigned": "latent_dim",
+                "index": 33
+            }
+        ],
+        "class_declaration": [
+            {
+                "function": "Declaration",
+                "parameters": "@nn.compact",
+                "assigned": 33
+            }
+        ],
+        "functions": [
+            {
+                "functionName": "__call__",
+                "parameters": "(self, x)",
+                "functionCalls": [
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=32, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")(x)",
+                        "assigned": "x",
+                        "index": 39
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=32, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")",
+                        "assigned": "x",
+                        "index": 39
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(x)",
+                        "assigned": "x",
+                        "index": 40
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=64, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")(x)",
+                        "assigned": "x",
+                        "index": 41
+                    },
+                    {
+                        "function": "Conv",
+                        "parameters": "(features=64, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")",
+                        "assigned": "x",
+                        "index": 41
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(x)",
+                        "assigned": "x",
+                        "index": 42
+                    },
+                    {
+                        "function": "reshape",
+                        "parameters": "((x.shape[0], -1))",
+                        "assigned": "x",
+                        "index": 43
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=self.latent_dim)(x)",
+                        "assigned": "x",
+                        "index": 44
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=self.latent_dim)",
+                        "assigned": "x",
+                        "index": 44
+                    }
+                ],
+                "scope": "Encoder",
+                "row": "37",
+                "returns": "x",
+                "translate": true,
+                "start_byte": 878,
+                "end_byte": 1422
+            }
+        ],
+        "translate": true,
+        "row_number": 33,
+        "parameters": "",
+        "base_classes": "(nn.Module)",
+        "start_byte": 778,
+        "end_byte": 1422
+    },
+    {
+        "scope": "Decoder",
+        "attributes": [
+            {
+                "function": "member",
+                "parameters": "int",
+                "assigned": "latent_dim",
+                "index": 49
+            }
+        ],
+        "class_declaration": [
+            {
+                "function": "Declaration",
+                "parameters": "@nn.compact",
+                "assigned": 49
+            }
+        ],
+        "functions": [
+            {
+                "functionName": "__call__",
+                "parameters": "(self, z)",
+                "functionCalls": [
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=7*7*64)(z)",
+                        "assigned": "z",
+                        "index": 55
+                    },
+                    {
+                        "function": "Dense",
+                        "parameters": "(features=7*7*64)",
+                        "assigned": "z",
+                        "index": 55
+                    },
+                    {
+                        "function": "reshape",
+                        "parameters": "((z.shape[0], 7, 7, 64))",
+                        "assigned": "z",
+                        "index": 56
+                    },
+                    {
+                        "function": "ConvTranspose",
+                        "parameters": "(features=32, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")(z)",
+                        "assigned": "z",
+                        "index": 57
+                    },
+                    {
+                        "function": "ConvTranspose",
+                        "parameters": "(features=32, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")",
+                        "assigned": "z",
+                        "index": 57
+                    },
+                    {
+                        "function": "relu",
+                        "parameters": "(z)",
+                        "assigned": "z",
+                        "index": 58
+                    },
+                    {
+                        "function": "ConvTranspose",
+                        "parameters": "(features=1, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")(z)",
+                        "assigned": "z",
+                        "index": 59
+                    },
+                    {
+                        "function": "ConvTranspose",
+                        "parameters": "(features=1, kernel_size=(3, 3), strides=(2, 2), padding=\"SAME\")",
+                        "assigned": "z",
+                        "index": 59
+                    },
+                    {
+                        "function": "sigmoid",
+                        "parameters": "(z)",
+                        "assigned": "z",
+                        "index": 60
+                    }
+                ],
+                "scope": "Decoder",
+                "row": "53",
+                "returns": "z",
+                "translate": true,
+                "start_byte": 1526,
+                "end_byte": 2144
+            }
+        ],
+        "translate": true,
+        "row_number": 49,
+        "parameters": "",
+        "base_classes": "(nn.Module)",
+        "start_byte": 1426,
+        "end_byte": 2144
+    },
+    {
+        "scope": "Autoencoder",
+        "attributes": [
+            {
+                "function": "member",
+                "parameters": "int",
+                "assigned": "latent_dim",
+                "index": 65
+            }
+        ],
+        "class_declaration": [],
+        "functions": [
+            {
+                "functionName": "setup",
+                "parameters": "(self)",
+                "functionCalls": [
+                    {
+                        "function": "Variable",
+                        "parameters": "Encoder((latent_dim=self.latent_dim))",
+                        "assigned": "self.encoder",
+                        "index": 69
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "self.encoder = Encoder(latent_dim=self.latent_dim)",
+                        "assigned": "self.encoder",
+                        "index": 69
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "Decoder((latent_dim=self.latent_dim))",
+                        "assigned": "self.decoder",
+                        "index": 70
+                    }
+                ],
+                "scope": "Autoencoder",
+                "row": "68",
+                "returns": null,
+                "translate": false,
+                "start_byte": 2236,
+                "end_byte": 2370
+            },
+            {
+                "functionName": "__call__",
+                "parameters": "(self, x)",
+                "functionCalls": [
+                    {
+                        "function": "cheatblock",
+                        "parameters": "latent = self.encoder(x)",
+                        "assigned": "latent",
+                        "index": 74
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "latent = self.encoder(x)",
+                        "assigned": "latent",
+                        "index": 74
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "reconstruction = self.decoder(latent)",
+                        "assigned": "reconstruction",
+                        "index": 75
+                    }
+                ],
+                "scope": "Autoencoder",
+                "row": "72",
+                "returns": "reconstruction",
+                "translate": false,
+                "start_byte": 2376,
+                "end_byte": 2637
+            }
+        ],
+        "translate": false,
+        "row_number": 65,
+        "parameters": "",
+        "base_classes": "(nn.Module)",
+        "start_byte": 2148,
+        "end_byte": 2637
+    },
+    {
+        "scope": "global",
+        "functions": [
+            {
+                "functionName": "create_train_state",
+                "parameters": "(rng, learning_rate, latent_dim, input_shape)",
+                "functionCalls": [
+                    {
+                        "function": "Variable",
+                        "parameters": "Autoencoder((latent_dim=latent_dim))",
+                        "assigned": "model",
+                        "index": 82
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "model = Autoencoder(latent_dim=latent_dim)",
+                        "assigned": "model",
+                        "index": 82
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "model.init(rng, jnp.ones(input_shape))[\"params\"]",
+                        "assigned": "params",
+                        "index": 83
+                    },
+                    {
+                        "function": "ones",
+                        "parameters": "(input_shape)",
+                        "assigned": "params",
+                        "index": 83
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "tx = optax.adam(learning_rate)",
+                        "assigned": "tx",
+                        "index": 84
+                    }
+                ],
+                "scope": "global",
+                "row": "81",
+                "returns": "train_state.TrainState.create(apply_fn=model.apply, params=params, tx=tx)",
+                "translate": false,
+                "start_byte": 2722,
+                "end_byte": 3019
+            },
+            {
+                "functionName": "compute_loss",
+                "parameters": "(pred, target)",
+                "functionCalls": [
+                    {
+                        "function": "kaiming_normal",
+                        "parameters": "(5)",
+                        "assigned": "x",
+                        "index": 88
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "loss = jnp.mean((pred - target) ** 2)",
+                        "assigned": "loss",
+                        "index": 89
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "loss = jnp.mean((pred - target) ** 2)",
+                        "assigned": "loss",
+                        "index": 89
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "jnp.mean((pred - target) ** 2)",
+                        "assigned": "",
+                        "index": 90
+                    }
+                ],
+                "scope": "global",
+                "row": "87",
+                "returns": "loss",
+                "translate": false,
+                "start_byte": 3021,
+                "end_byte": 3191
+            },
+            {
+                "functionName": "train_step",
+                "parameters": "(state, batch)",
+                "functionCalls": [
+                    {
+                        "function": "cheatblock",
+                        "parameters": "grads, _ = jax.grad(loss_fn, has_aux=True)(state.params, state.apply_fn, batch)",
+                        "assigned": "grads, _",
+                        "index": 96
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "grads, _ = jax.grad(loss_fn, has_aux=True)(state.params, state.apply_fn, batch)",
+                        "assigned": "grads, _",
+                        "index": 96
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "jax.grad(loss_fn, has_aux=True)(state.params, state.apply_fn, batch)",
+                        "assigned": "grads, _",
+                        "index": 96
+                    }
+                ],
+                "scope": "global",
+                "row": "94",
+                "returns": "state.apply_gradients(grads=grads)",
+                "translate": false,
+                "start_byte": 3202,
+                "end_byte": 3410
+            },
+            {
+                "functionName": "loss_fn",
+                "parameters": "(params, apply_fn, batch)",
+                "functionCalls": [
+                    {
+                        "function": "Variable",
+                        "parameters": "apply_fn(({\"params\": params}, batch))",
+                        "assigned": "pred",
+                        "index": 100
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "pred = apply_fn({\"params\": params}, batch)",
+                        "assigned": "pred",
+                        "index": 100
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "compute_loss((pred, batch))",
+                        "assigned": "loss",
+                        "index": 101
+                    }
+                ],
+                "scope": "global",
+                "row": "99",
+                "returns": "loss, pred",
+                "translate": false,
+                "start_byte": 3412,
+                "end_byte": 3555
+            },
+            {
+                "functionName": "eval_step",
+                "parameters": "(state, batch)",
+                "functionCalls": [],
+                "scope": "global",
+                "row": "106",
+                "returns": "state.apply_fn({\"params\": state.params}, batch)",
+                "translate": true,
+                "start_byte": 3567,
+                "end_byte": 3654
+            },
+            {
+                "functionName": "load_data",
+                "parameters": "()",
+                "functionCalls": [
+                    {
+                        "function": "cheatblock",
+                        "parameters": "transform = transforms.Compose([transforms.ToTensor()])",
+                        "assigned": "transform",
+                        "index": 110
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "transform = transforms.Compose([transforms.ToTensor()])",
+                        "assigned": "transform",
+                        "index": 110
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "[transforms.ToTensor()]",
+                        "assigned": "transform",
+                        "index": 110
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "train_dataset = datasets.MNIST(root='./data', train=True, transform=transform, download=True)",
+                        "assigned": "train_dataset",
+                        "index": 111
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "test_dataset = datasets.MNIST(root='./data', train=False, transform=transform, download=True)",
+                        "assigned": "test_dataset",
+                        "index": 112
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "DataLoader((train_dataset, batch_size=64, shuffle=True))",
+                        "assigned": "train_loader",
+                        "index": 114
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "DataLoader((test_dataset, batch_size=64, shuffle=False))",
+                        "assigned": "test_loader",
+                        "index": 115
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "load_data(())",
+                        "assigned": "train_loader, test_loader",
+                        "index": 118
+                    }
+                ],
+                "scope": "global",
+                "row": "109",
+                "returns": "train_loader, test_loader",
+                "translate": false,
+                "start_byte": 3656,
+                "end_byte": 4113
+            },
+            {
+                "functionName": "train_autoencoder",
+                "parameters": "(latent_dim=64, num_epochs=1, learning_rate=1e-3)",
+                "functionCalls": [
+                    {
+                        "function": "cheatblock",
+                        "parameters": "rng = random.PRNGKey(0)",
+                        "assigned": "rng",
+                        "index": 122
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "rng = random.PRNGKey(0)",
+                        "assigned": "rng",
+                        "index": 122
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "create_train_state((rng, learning_rate, latent_dim, (1, 28, 28, 1)))",
+                        "assigned": "state",
+                        "index": 123
+                    },
+                    {
+                        "function": "python_loop",
+                        "parameters": "range(num_epochs)",
+                        "assigned": "epoch",
+                        "index": 125,
+                        "functionCallsLoop": []
+                    },
+                    {
+                        "function": "python_loop",
+                        "parameters": "train_loader",
+                        "assigned": "batch",
+                        "index": 126,
+                        "functionCallsLoop": [
+                            {
+                                "function": "cheatblock",
+                                "parameters": "images = jnp.array(images.numpy())",
+                                "assigned": "images",
+                                "index": 128
+                            },
+                            {
+                                "function": "cheatblock",
+                                "parameters": "(images.numpy())",
+                                "assigned": "images",
+                                "index": 128
+                            },
+                            {
+                                "function": "reshape",
+                                "parameters": "(-1, 28, 28, 1)",
+                                "assigned": "images",
+                                "index": 129
+                            },
+                            {
+                                "function": "Variable",
+                                "parameters": "train_step((state, images))",
+                                "assigned": "state",
+                                "index": 132
+                            }
+                        ]
+                    },
+                    {
+                        "function": "Variable",
+                        "parameters": "train_autoencoder(())",
+                        "assigned": "state",
+                        "index": 139
+                    }
+                ],
+                "scope": "global",
+                "row": "121",
+                "returns": "state",
+                "translate": false,
+                "start_byte": 4157,
+                "end_byte": 4712
+            },
+            {
+                "functionName": "show_images",
+                "parameters": "(original, reconstructed)",
+                "functionCalls": [
+                    {
+                        "function": "cheatblock",
+                        "parameters": "fig, axes = plt.subplots(1, 2)",
+                        "assigned": "fig, axes",
+                        "index": 143
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "fig, axes = plt.subplots(1, 2)",
+                        "assigned": "fig, axes",
+                        "index": 143
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "axes[0].imshow(original.squeeze(), cmap='gray')",
+                        "assigned": "",
+                        "index": 144
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "(original.squeeze(), cmap='gray')",
+                        "assigned": "",
+                        "index": 144
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "axes[0].set_title('Original')",
+                        "assigned": "",
+                        "index": 145
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "axes[1].imshow(reconstructed.squeeze(), cmap='gray')",
+                        "assigned": "",
+                        "index": 146
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "(reconstructed.squeeze(), cmap='gray')",
+                        "assigned": "",
+                        "index": 146
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "axes[1].set_title('Reconstructed')",
+                        "assigned": "",
+                        "index": 147
+                    },
+                    {
+                        "function": "cheatblock",
+                        "parameters": "plt.show()",
+                        "assigned": "",
+                        "index": 148
+                    }
+                ],
+                "scope": "global",
+                "row": "142",
+                "returns": null,
+                "translate": false,
+                "start_byte": 4792,
+                "end_byte": 5065
+            },
+            {
+                "functionName": "evaluate_autoencoder",
+                "parameters": "(state)",
+                "functionCalls": [
+                    {
+                        "function": "python_loop",
+                        "parameters": "test_loader",
+                        "assigned": "batch",
+                        "index": 151,
+                        "functionCallsLoop": [
+                            {
+                                "function": "cheatblock",
+                                "parameters": "images = jnp.array(images.numpy())",
+                                "assigned": "images",
+                                "index": 153
+                            },
+                            {
+                                "function": "cheatblock",
+                                "parameters": "images = jnp.array(images.numpy())",
+                                "assigned": "images",
+                                "index": 153
+                            },
+                            {
+                                "function": "cheatblock",
+                                "parameters": "(images.numpy())",
+                                "assigned": "images",
+                                "index": 153
+                            },
+                            {
+                                "function": "reshape",
+                                "parameters": "(-1, 28, 28, 1)",
+                                "assigned": "images",
+                                "index": 154
+                            },
+                            {
+                                "function": "Variable",
+                                "parameters": "eval_step((state, images))",
+                                "assigned": "reconstructed_images",
+                                "index": 157
+                            }
+                        ]
+                    }
+                ],
+                "scope": "global",
+                "row": "150",
+                "returns": null,
+                "translate": false,
+                "start_byte": 5067,
+                "end_byte": 5469
+            }
+        ],
+        "translate": false
+    }
+]

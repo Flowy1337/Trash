@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+
+<div id="main">
+    <div style="height: 60px;
+display:flex" >
+        <img src="img.png">
+        <img src="jigswat.png">
+    </div>
+
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Blockly-files/blocks.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The type of the block, set to "python_function".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message template for the block's UI.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The arguments for the block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args0[].type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The type of the field/input (e.g., field_input, input_dummy, input_statement).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args0[].name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name identifier for the field/input.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args0[].text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The default text for the input field (only for field_input).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The color of the block in the Blockly workspace.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>previousStatement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Indicates that this block can be followed by another block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nextStatement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Indicates that this block can be preceded by another block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tooltip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The tooltip text that appears on hover.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>helpUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A URL to more help related to this block.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Blockly-files_blocks.js.html">Blockly-files/blocks.js</a>, <a href="Blockly-files_blocks.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Blockly-files/javascript.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">How blockly generates code for a given block is stored here</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Blockly-files_javascript.js.html">Blockly-files/javascript.js</a>, <a href="Blockly-files_javascript.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="prettyprint"><code>pythonGenerator.forBlock['self'] = function(block, generator) {
+    var model = generator.valueToCode(block, 'func', Order.NONE);
+    return '@nn.compact\\n' +
+           'def __call__(self, x):\\n';
+  };
+
+
+
+
+Notes:
+- The `provideFunction_` utility ensures that the function is only defined once and can be reused across multiple blocks.
+- Adjust the block logic and code output based on the specific behavior you want to implement in Python or JavaScript.</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Blockly-files/serialization.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Provides function to save and load a Blockly workspace</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Copyright 2023 Google LLC
+SPDX-License-Identifier: Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Blockly-files_serialization.js.html">Blockly-files/serialization.js</a>, <a href="Blockly-files_serialization.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Blockly-files/toolbox.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">As shown, each content array can have it own content array again, its advised to only handle kind and type here
+Inputs can be defined in blocks.js</div>
+        
+
+        
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The kind of the toolbox, set to "categoryToolbox".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The contents of the toolbox, containing different categories of blocks.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Each category in the toolbox.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The kind of the category, set to "category".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the category, displayed in the toolbox.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].categorystyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The CSS class applied to the category for styling.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].contents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The blocks contained in this category.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].contents[</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Each block within the category.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].contents[].kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The kind of the block, set to "block".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents[].contents[].type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The type identifier for the block (e.g., controls_if, logic_compare).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Blockly-files_toolbox.js.html">Blockly-files/toolbox.js</a>, <a href="Blockly-files_toolbox.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>main.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">This file is the main process of the Electron application. It initializes the app,
+manages inter-process communication (IPC) between the renderer and the main process,
+and handles file operations, including saving, reading, and modifying files.
+It also provides functionality to run external scripts, such as the 'blockify' script.
+The file handles:
+- Initializes the Electron BrowserWindow and loads the renderer (index.html).
+- Handles file I/O operations like reading, writing, and modifying Python files.
+- Interacts with the renderer process via IPC (save, read, start script commands).
+- Clears cache, cookies, and storage data before launching the main window.
+The file is automatically executed when the Electron application starts. It sets up
+the main process and connects the back-end functionality to the front-end interface.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>workspaceInit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">This is a utility file for creating and connecting blocks
+The `workspace.init` function sets up the Blockly workspace with custom blocks,
+toolbox configuration, event listeners, and other necessary configurations.
+
+The file is crucial for initializing the environment where users can drag and
+drop blocks to build visual code. It interacts with various Blockly APIs to
+generate code and maintain state.
+
+Key features include:
+- Initializing the Blockly workspace with a predefined toolbox and custom blocks.
+- Setting event listeners for block changes and code generation.
+- Handling workspace resizing and layout adjustments.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="workspaceInit.js.html">workspaceInit.js</a>, <a href="workspaceInit.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#appendBlockToClass">appendBlockToClass</a></li><li><a href="global.html#appendBlockToFunction">appendBlockToFunction</a></li><li><a href="global.html#appendBlockToWorkspace">appendBlockToWorkspace</a></li><li><a href="global.html#connectBlocksHorizontally">connectBlocksHorizontally</a></li><li><a href="global.html#connectBlocksVertical">connectBlocksVertical</a></li><li><a href="global.html#createWindow">createWindow</a></li><li><a href="global.html#deleteDirContent">deleteDirContent</a></li><li><a href="global.html#extractXFromExpression">extractXFromExpression</a></li><li><a href="global.html#getBlockInformation">getBlockInformation</a></li><li><a href="global.html#insertCommentAtLine">insertCommentAtLine</a></li><li><a href="global.html#isNumericString">isNumericString</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#removeFirstAndLastParentheses">removeFirstAndLastParentheses</a></li><li><a href="global.html#save">save</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

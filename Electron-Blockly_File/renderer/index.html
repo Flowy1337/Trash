@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Blockly Application</title>
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https://blockly-demo.appspot.com/static/media/ data:;
+    media-src 'self' https://blockly-demo.appspot.com/static/media/;
+    script-src 'self';
+">
+
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+        /* To ensure the layout is responsive */
+        @media (max-width: 1200px) {
+            #container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #blocklyDiv, #codeeditor, #textarea #currentEditor{
+                width: 90%;
+            }
+
+            #textarea {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<img src="./Resources/Jigsaw.png" style="width: 75px;
+height: 60px">
+<img src="./Resources/jigswat.png" style="
+height: 60px">
+<img src="Resources/Ruprecht-Karls-Universität_Heidelberg_Logo.svg.png" id="logo">
+<div id="topRightIcons" style="position: absolute; top: 20px; margin-left: 40%; display: flex; gap: 10px;">
+    <!-- Demo Video Icon -->
+    <a href="" target="_blank">
+        <img src="Resources/VideoIcon.png" alt="Demo Video" title="Open a demo video of the project" style="width: 40px; height: 40px;">
+    </a>
+
+    <!-- Documentation Icon -->
+        <img src="Resources/DocumentIcon.png" id="openDoc" alt="Documentation" title="Opens the documentation of the project" style="width: 40px; height: 40px;">
+
+</div>
+<div>
+    <input type="text" id="searchBox" placeholder="Search for a block..." style="margin-bottom: 10px; width: 50%;">
+    <div id="searchResults"></div>
+</div>
+<div id="container">
+    <div id="blocklyDiv"></div>
+    <div id = "currentEditor" style="display:none;
+height: 670px;"></div>
+    <div id="codeeditor" style="height: 670px;">
+
+    </div>
+    <!-- Make sure this id matches in the script below -->
+
+</div>
+
+<div class="loader" id="progress" style="display:none;" ></div>
+<button id="CodeToBlock" style="display:none" class="minimal-save-btn">Generate blocks from src </button>
+<div id="CreateHandle">
+    <input type="text" id="new-view-name" placeholder="Enter view name">
+
+    <button id="createNewView" class="minimal-save-btn">Create New View</button>
+    <button class="minimal-save-btn" id="swap">Clear Workspace</button>
+
+        <label for="ViewList"></label>
+        <select id="ViewList" class="modern-select">
+            <option disabled value="" selected>Select view...</option>
+        </select>
+
+</div>
+<button id="loadFileButton" class="minimal-save-btn">Load File</button>
+
+<i style="margin-left: 20px">
+<label>
+
+
+
+    <input id="cheat-block-amount" class="number-input" type="number" min="0" title="Amount of blocks which are created dynamically can be set here" value=0>
+
+</label>
+</i>
+<div id="textarea"></div>
+<button id="saveButton" class="minimal-save-btn" style="display: none">Show changes</button>
+
+<button id="replace" class="minimal-save-btn" style="display:none;
+position: absolute;
+left:1%;
+margin-top: 20px;
+" title="Overwrite chosen file with generated code">Submit</button>
+
+<button id="discard" class="minimal-save-btn" style="display:none;
+position: absolute;
+left:6%;
+margin-top:20px">Discard</button>
+
+
+    <!-- Hidden input that allows the user to select a file -->
+
+
+    <!-- Placeholder to display selected file path -->
+
+
+
+<script type="module" src="../Javascript-code/workspaceInit.js"></script>
+
+<!-- Ace Editor Script -->
+<script src="./ace.js"></script>
+<script src="./theme-monokai.js"></script>
+<script src="./mode-python.js"></script>
+
+</body>
+</html>

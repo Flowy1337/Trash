@@ -1,0 +1,21 @@
+{
+  "source": {
+    "include": ["D:/Electron-Blockly_File/Javascript-code"],
+    "includePattern": ".+\\.js(doc|on)?$",
+    "excludePattern": "(node_modules|\\.git)"
+  },
+  "opts": {
+    "destination": "./docs",
+    "recurse": true
+  },
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": [],
+  "templates": {
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false
+    }
+  }
+}

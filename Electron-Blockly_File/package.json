@@ -1,0 +1,33 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Javascript-code/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "python Python-code/generator/patternMatch.py && electron .",
+    "dev": "electron .",
+    "blockify": "python Python-code/generator/patternMatch.py",
+    "docs": "start ./docs/index.html && pdoc ./Python-code/generator/patternMatch.py Python-code/generator/Watchdog.py ./Python-code/generator/BlockFunction.py"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "blockly": "^11.1.0",
+    "puppeteer": "^23.4.0",
+    "renderer": "^0.1.5",
+    "resize-img": "^1.1.2",
+    "toastify": "^2.0.1",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-python": "^0.21.0",
+    "typescript": "^5.5.3",
+    "wkhtmltopdf": "^0.4.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "electron": "^30.0.8",
+    "mocha": "^10.7.3",
+    "tree-sitter-cli": "^0.22.6"
+  }
+}
